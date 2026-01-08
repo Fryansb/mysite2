@@ -8,6 +8,10 @@ STATUS = (
 
 
 class Post(models.Model):
+    """
+    Modelo para posts do blog.
+    Cada post possui título, conteúdo, autor e status de publicação.
+    """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_post')
